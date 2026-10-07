@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Raden Zahra Auliya Marissa Soihin — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--rose:#A9687C;--rose-d:#81495E;--pink:#D6A5B3;--cream:#F8F3EA;--warm:#FFFDF8;--ink:#171515;--gray:#77706D;--bg:var(--cream);--card:var(--warm);--line:rgba(23,21,21,.75);
+--serif:'Playfair Display','Cormorant Garamond',Georgia,serif;--sans:'DM Sans',Inter,system-ui,sans-serif;--hand:'Caveat','Bradley Hand',cursive;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;overflow-x:hidden;min-height:100%}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.07;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit}
+img{max-width:100%}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;line-height:.95}
+.hand{font-family:var(--hand);color:var(--rose-d);font-size:1.4rem;line-height:1.2}
+:root[data-theme="dark"] .hand,:root:not([data-theme="light"]) .hand{--x:0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hand{color:var(--pink)}}
+.wrap{width:min(1140px,100% - 40px);margin-inline:auto}
+section{position:relative;padding:110px 0;overflow:hidden}
+.label{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gray);display:block;margin-bottom:14px}
+.big{font-size:clamp(3rem,9vw,7rem);letter-spacing:-.02em}
+
+#experience .big + .hand{
+    display:block;
+    margin-top:20px;
+}
+.big em{color:var(--rose);font-style:italic}
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:.35s}
+header.scrolled{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid color-mix(in srgb,var(--ink) 12%,transparent)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--serif);font-style:italic;font-size:1.3rem;text-decoration:none}
+nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;font-size:.72rem;letter-spacing:.2em;font-weight:500;position:relative;padding:6px 0}
+nav a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--rose);transform:scaleX(0);transform-origin:left;transition:.35s}
+nav a:hover::after,nav a.active::after{transform:scaleX(1)}
+nav a.active{color:var(--rose-d)}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:50%;width:42px;height:42px;cursor:pointer;color:var(--ink)}
+.burger span{display:block;width:16px;height:1.5px;background:currentColor;margin:4px auto;transition:.3s}
+.burger[aria-expanded=true] span:first-child{transform:translateY(2.75px) rotate(45deg)}
+.burger[aria-expanded=true] span:last-child{transform:translateY(-2.75px) rotate(-45deg)}
+@media(max-width:820px){.burger{display:block}
+nav{position:absolute;top:100%;left:0;right:0;background:var(--bg);padding:10px 24px 24px;border-bottom:1px solid var(--line);display:none}
+nav.open{display:block}nav ul{flex-direction:column;gap:6px}nav a{display:block;padding:12px 0;font-size:.85rem}}
+/* doodles */
+.d{position:absolute;width:44px;height:44px;color:var(--rose);pointer-events:none;z-index:1;will-change:transform}
+.d svg{width:100%;height:100%;overflow:visible}
+.d.pink{color:var(--pink)}.d.ink{color:var(--ink)}
+.spin{animation:spin 24s linear infinite}.drift{animation:drift 9s ease-in-out infinite}.bounce{animation:bounce 4s ease-in-out infinite}.slide{animation:slide 6s ease-in-out infinite}.twinkle{animation:twinkle 4.5s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes drift{50%{transform:translate(8px,-10px) rotate(8deg)}}
+@keyframes bounce{50%{transform:translateY(-6px) scale(1.06)}}
+@keyframes slide{50%{transform:translateX(12px)}}
+@keyframes twinkle{0%,100%{opacity:1}50%{opacity:.25}}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+/* hero */
+#home{min-height:100vh;display:flex;align-items:center;padding-top:130px}
+.hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:clamp(30px,5vw,70px);align-items:center;position:relative}
+.hero>div:first-child{position:relative;z-index:3}
+.hero h1{font-size:clamp(3rem,7.6vw,6.8rem);letter-spacing:-.03em;line-height:1.02;margin:6px 0 4px}
+.hero h1 span{display:block;transition:transform .5s}
+.hero h1 span:nth-child(2){margin-left:clamp(16px,4vw,64px);color:var(--rose);font-style:italic}
+.hero h1:hover span:first-child{transform:translateX(-8px)}.hero h1:hover span:nth-child(2){transform:translateX(12px)}
+.hero .hand{display:block}
+.role{font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;margin:28px 0 12px;font-weight:500}
+.intro{max-width:440px;color:var(--ink);opacity:.82;margin:20px 0 30px}
+.btn{display:inline-flex;gap:10px;align-items:center;border:1.5px solid var(--ink);background:none;color:var(--ink);padding:13px 24px;border-radius:99px;font:500 .78rem var(--sans);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:.3s}
+.btn:hover{background:var(--rose-d);border-color:var(--rose-d);color:#fff;transform:translateY(-3px) rotate(-1deg)}
+.btn.fill{background:var(--ink);color:var(--bg)}
+.collage{position:relative;height:430px;display:grid;place-items:center}
+.blob{position:absolute;width:300px;height:340px;background:var(--pink);border-radius:58% 42% 55% 45%/48% 55% 45% 52%;transform:rotate(8deg)}
+.polaroid{position:relative;width:min(250px,64vw);background:var(--warm);padding:10px 10px 38px;transform:rotate(-4deg);box-shadow:0 14px 34px rgba(60,30,40,.25);cursor:pointer;transition:.4s;z-index:2;margin-left:30px}
+.polaroid:hover{transform:rotate(-1deg) scale(1.03)}
+.polaroid .ph{aspect-ratio:4/5;background:linear-gradient(160deg,var(--pink),var(--rose));display:grid;place-items:center;overflow:hidden;color:#fff;text-align:center;font:.8rem var(--sans);padding:10px}
+.polaroid img{width:100%;height:100%;object-fit:cover;display:block}
+.polaroid .cap{position:absolute;bottom:6px;left:0;right:0;text-align:center;font:700 1.15rem var(--hand);color:#171515}
+.tape{position:absolute;width:86px;height:26px;background:rgba(214,165,179,.75);top:-12px;left:50%;margin-left:-43px;transform:rotate(3deg);z-index:3;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.welcome{margin:44px 0 0 clamp(0px,3vw,40px);max-width:300px;transform:rotate(-2deg);font-size:1.5rem}
+@media(max-width:820px){.hero{grid-template-columns:1fr}.collage{height:380px;order:-1}#home{padding-top:110px}.welcome{margin-top:34px}}
+/* about */
+.split{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:start}
+.about p{font-size:1.1rem;max-width:520px}
+.cards{display:grid;gap:16px;margin-top:30px}
+.card{background:var(--card);border:1px solid var(--line);padding:18px 22px;position:relative;transition:.35s}
+.card:nth-child(1){transform:rotate(-.8deg)}.card:nth-child(2){transform:rotate(.6deg);margin-left:24px}.card:nth-child(3){transform:rotate(-.4deg)}
+.card:hover{transform:rotate(0) translateY(-4px);box-shadow:6px 6px 0 var(--pink)}
+.card b{font-family:var(--serif);font-size:1.25rem;font-weight:500;display:block}
+.card small{color:var(--gray);letter-spacing:.12em;text-transform:uppercase;font-size:.68rem}
+.tl{position:relative;margin-top:32px;padding-left:24px;border-left:1.5px dashed var(--rose)}
+.tl div{position:relative;padding:4px 0 14px;font-size:.9rem}
+.tl div::before{content:"";position:absolute;left:-31px;top:11px;width:12px;height:12px;border-radius:50%;background:var(--rose);border:2px solid var(--bg)}
+@media(max-width:820px){.split{grid-template-columns:1fr;gap:34px}}
+/* skills */
+#skills{background:color-mix(in srgb,var(--pink) 30%,var(--bg))}
+.chips{display:flex;flex-wrap:wrap;gap:16px;margin:40px 0 46px}
+.chip{background:var(--card);border:1.5px solid var(--ink);padding:14px 26px;border-radius:99px;font-family:var(--serif);font-size:1.35rem;transition:.35s;cursor:default}
+.chip:nth-child(odd){transform:rotate(-3deg)}.chip:nth-child(even){transform:rotate(2.5deg);background:var(--rose);color:#fff;border-color:var(--rose-d)}
+.chip:nth-child(3n){border-radius:8px 28px 8px 28px}
+.chip:hover{transform:rotate(0) translateY(-6px) scale(1.05)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.box{background:var(--card);border:1px solid var(--line);padding:28px;position:relative}
+.box h3{font-size:1.6rem;margin-bottom:16px}
+.tag{display:inline-block;border:1.5px dashed var(--rose-d);padding:6px 16px;border-radius:99px;margin:0 8px 8px 0;font-size:.85rem;color:var(--gray)}
+.box ul{list-style:none;margin:0;padding:0}.box li{padding:6px 0;border-bottom:1px dotted var(--gray)}
+@media(max-width:700px){.cols{grid-template-columns:1fr}}
+/* works */
+.works{display:grid;gap:70px;margin-top:56px}
+.proj{display:grid;grid-template-columns:1.2fr 1fr;gap:0;align-items:center;position:relative;transition:transform .5s}
+.proj:hover{transform:translateY(-8px)}
+.proj:nth-child(2){grid-template-columns:1fr 1.2fr}.proj:nth-child(2) .shot{order:2}
+.shot{aspect-ratio:16/10;overflow:hidden;border:1.5px solid var(--ink);background:repeating-linear-gradient(45deg,var(--pink) 0 14px,color-mix(in srgb,var(--pink) 70%,var(--warm)) 14px 28px);position:relative;display:grid;place-items:center;text-align:center;color:var(--rose-d);font:700 1.3rem var(--hand)}
+.shot .inner{
+    transition:transform .8s;
+    width:100%;
+    height:100%;
+    position:relative;
+}
+
+.proj:nth-child(2) .shot .inner{
+    position:absolute;
+    inset:0;               /* penuhi seluruh kotak, tinggi jadi pasti */
+    width:auto;
+    height:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
+}
+
+.proj:nth-child(2) .shot img{
+    height:100%;           /* sekarang ngikut tinggi kotak (dikurangi padding) */
+    width:auto;
+    max-width:100%;
+    min-height:0;
+    object-fit:contain;
+    display:block;
+    margin:0;
+}
+
+/* biar pas hover HP tidak kepotong */
+.proj:nth-child(2):hover .shot .inner{
+    transform:scale(1.03);
+}
+
+.proj:hover .inner{transform:scale(1.07)}
+.info{background:var(--card);border:1px solid var(--line);padding:30px;margin-left:-50px;position:relative;z-index:2;transform:translateY(24px);transition:.5s}
+.proj:nth-child(2) .info{margin-left:0;margin-right:-50px}
+.proj:nth-child(3) .info{transform:translateY(-14px) rotate(1deg)}
+.proj:hover .info{box-shadow:8px 8px 0 var(--pink)}
+.info .no{font:italic 500 1rem var(--serif);color:var(--rose)}
+.info h3{font-size:1.9rem;margin:6px 0 12px}
+.info p{margin:6px 0;font-size:.92rem;color:var(--gray)}.info p b{color:var(--ink)}
+.links{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}.links .btn{padding:9px 16px;font-size:.68rem}
+@media(max-width:820px){.proj,.proj:nth-child(2){grid-template-columns:1fr}.proj:nth-child(2) .shot{order:0}.info,.proj:nth-child(2) .info,.proj:nth-child(3) .info{margin:-24px 14px 0;transform:none}}
+/* journey */
+.journey{position:relative;max-width:760px;margin:56px 0 0 clamp(0px,8vw,120px);padding-left:40px;border-left:2px solid var(--ink)}
+.ex{position:relative;margin-bottom:26px}
+.ex::before{content:"";position:absolute;left:-49px;top:26px;width:16px;height:16px;background:var(--bg);border:2px solid var(--ink);border-radius:50%;transition:.4s}
+.ex.open::before,.ex:hover::before{background:var(--rose);border-color:var(--rose-d);transform:scale(1.5)}
+.ex button{all:unset;display:block;width:100%;cursor:pointer;background:var(--card);border:1px solid var(--line);padding:20px 24px;transition:.35s}
+.ex button:hover,.ex button:focus-visible{
+    transform:translateX(4px);
+    box-shadow:3px 3px 0 var(--pink);
+    outline:none
+}
+.ex .yr{font-size:.72rem;letter-spacing:.25em;color:var(--rose-d);font-weight:700}
+.ex h3{font-size:1.6rem;margin:4px 0}.ex .sub{color:var(--gray);font-size:.9rem}
+.more{max-height:0;overflow:hidden;transition:max-height .5s ease,margin .5s}
+.ex.open .more{max-height:700px;margin-top:14px}
+.more ul{margin:0;padding-left:20px;font-size:.95rem}.more li{margin-bottom:8px}.more li::marker{color:var(--rose)}
+.plus{float:right;font-family:var(--serif);font-size:1.6rem;transition:.4s}.ex.open .plus{transform:rotate(45deg)}
+@media(max-width:600px){.journey{padding-left:26px;margin-left:8px}.ex::before{left:-35px}}
+/* contact */
+#contact{text-align:left;background:var(--rose-d);color:var(--warm)}
+#contact .label,#contact .hand{color:var(--pink)}
+#contact .big em{color:var(--pink)}
+.mail{font-family:var(--serif);font-size:clamp(1.3rem,4vw,2.4rem);display:inline-block;margin:24px 0;text-decoration:underline wavy var(--pink);text-underline-offset:8px;word-break:break-all}
+.soc{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 40px}
+.soc a{border:1.5px dashed var(--pink);padding:8px 18px;border-radius:99px;text-decoration:none;font-size:.85rem;transition:.3s}
+.soc a:hover{background:var(--pink);color:var(--ink)}
+.say{font-size:1rem;padding:20px 44px;background:var(--warm);color:var(--ink);border-color:var(--warm)}
+.say:hover{background:var(--ink);border-color:var(--ink);color:var(--warm)}
+footer{margin-top:90px;padding-top:24px;border-top:1px solid rgba(255,253,248,.3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.8rem}
+#dot{position:fixed;width:14px;height:14px;border:1.5px solid var(--rose-d);border-radius:50%;pointer-events:none;z-index:100;transition:width .25s,height .25s,background .25s;transform:translate(-50%,-50%);display:none}
+#dot.big{width:44px;height:44px;background:rgba(169,104,124,.22)}
+@media(hover:hover) and (pointer:fine){#dot{display:block}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+:focus-visible{outline:2px solid var(--rose-d);outline-offset:3px}
+</style>
+</head>
+<body>
+<!-- Doodle library -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="star" viewBox="0 0 40 40"><path d="M20 3c1.5 8 4 13 16 17-12 3-14 9-16 17-2-8-5-13-16-17 12-4 14-9 16-17z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="flower" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M20 15c-6-9 4-12 0-13-4 1 6 4 0 13zM25 20c9-6 12 4 13 0-1-4-4 6-13 0zM20 25c6 9-4 12 0 13 4-1-6-4 0-13zM15 20c-9 6-12-4-13 0 1 4 4-6 13 0z"/><circle cx="20" cy="20" r="3"/></g></symbol>
+<symbol id="heart" viewBox="0 0 40 40"><path d="M20 35C6 25 4 16 9 11c5-4 9 0 11 4 2-4 6-8 11-4 5 5 3 14-11 24z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="sparkle" viewBox="0 0 40 40"><path d="M20 4v10M20 26v10M4 20h10M26 20h10M9 9l6 6M25 25l6 6M31 9l-6 6M15 25l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></symbol>
+<symbol id="scribble" viewBox="0 0 80 30"><path d="M3 20c8-14 12 8 20-6s12 10 22-4 12 8 22-4 8 8 10 4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+<symbol id="arrow" viewBox="0 0 60 50"><path d="M4 8c25-4 44 6 46 30m0 0l-9-9m9 9l8-11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+<symbol id="circle" viewBox="0 0 60 60"><path d="M32 6C14 4 4 20 8 35s24 22 38 12 14-30 0-38C40 5 28 4 22 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="cross" viewBox="0 0 40 40"><path d="M8 9l24 22M31 8L10 32" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+</defs></svg>
+<div id="dot" aria-hidden="true"></div>
+
+<header id="top"><div class="wrap bar">
+<a class="logo" href="#home">ayha ✦</a>
+<button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+<nav id="menu" aria-label="Main"><ul>
+<li><a href="#home">HOME</a></li><li><a href="#about">ABOUT</a></li><li><a href="#skills">SKILLS</a></li><li><a href="#portfolio">PORTFOLIO</a></li><li><a href="#experience">EXPERIENCE</a></li><li><a href="#contact">CONTACT</a></li>
+</ul></nav></div></header>
+
+<main>
+<!-- HOME -->
+<section id="home"><div class="wrap hero">
+<div class="rv in">
+<span class="hand">hello, i'm</span>
+<h1><span>Raden Zahra</span><span>Auliya Marissa</span></h1>
+<p class="role">Computer Science Student</p>
+<p class="hand" style="font-size:1.7rem">wired to create<br></p>
+<p class="intro">Computer Science student interested in Software Engineering, Cloud Computing, and Artificial Intelligence.</p>
+<a class="btn" href="#about">explore my work ↓</a>
+<p class="hand welcome"> ♡</p>
+</div>
+<div class="collage">
+<div class="blob"></div>
+<!-- PORTRAIT: replace the src below with your photo file, e.g. src="zahra.jpg" (click the frame to preview a photo locally) -->
+<figure class="polaroid" id="frame" title="Click to preview your photo" style="margin-block:0">
+<span class="tape"></span>
+<div class="ph"><img id="portrait" alt="Portrait of Raden Zahra" src="images/zahra.jpeg" hidden><span id="phText">your portrait here<br>(click to preview)</span></div>
+<span class="cap">zahra ✿</span>
+</figure>
+<span class="d drift" style="top:6%;right:8%" data-p=".06"><svg><use href="#star"/></svg></span>
+<span class="d spin pink" style="bottom:10%;right:2%;width:52px;height:52px" data-p=".1"><svg><use href="#flower"/></svg></span>
+<span class="d bounce ink" style="top:30%;left:4%;width:34px"><svg><use href="#heart"/></svg></span>
+<span class="d slide" style="top:0;left:30%;width:80px"><svg><use href="#scribble"/></svg></span>
+<span class="d twinkle" style="bottom:2%;left:22%;width:30px"><svg><use href="#sparkle"/></svg></span>
+</div></div></section>
+
+<!-- ABOUT -->
+<section id="about"><div class="wrap split about">
+<div class="rv">
+<span class="label">01 — the story so far</span>
+<h2 class="big">ABOUT<br><em>MYSELF.</em></h2>
+<span class="hand">a little bit of background ↓</span>
+<span class="d drift" style="top:-10px;right:10%"><svg><use href="#star"/></svg></span>
+<span class="d pink" style="top:150px;left:42%;width:70px;height:70px"><svg><use href="#circle"/></svg></span>
+</div>
+<div class="rv">
+<p>I am a Computer Science student at BINUS University B28. I approach my academic journey with enthusiasm, responsibility, and a strong willingness to keep learning. I enjoy balancing academic activities with other experiences while continuously improving my skills and adapting to new environments.</p>
+<div class="cards">
+<div class="card"><small>Education</small><b>BINUS University</b>Computer Science · 2024 — Present</div>
+<div class="card"><small>High School</small><b>SMAN 3 Bandung</b>2021 — 2024</div>
+<div class="card"><small>Junior High</small><b>SMP Darul Hikam Bandung</b>2018 — 2021</div>
+</div>
+<div class="tl" aria-label="Education timeline"><div>2018 — SMP Darul Hikam</div><div>2021 — SMAN 3 Bandung</div><div>2024 — BINUS University</div></div>
+</div></div></section>
+
+<!-- SKILLS -->
+<section id="skills"><div class="wrap">
+<div class="rv"><span class="label">02 — in my toolbox</span>
+<h2 class="big">THINGS<br><em>I CAN DO.</em></h2></div>
+<div class="chips rv"><span class="chip">Creative</span><span class="chip">Teamwork</span><span class="chip">Time Management</span><span class="chip">Adaptability</span><span class="chip">Willingness to Learn</span></div>
+<div class="cols rv">
+<div class="box"><h3>LANGUAGES</h3><ul><li>Bahasa Indonesia</li><li>Bahasa Inggris — Passive</li></ul></div>
+<!-- EDIT: replace each .tag with a real skill, duplicate or delete as needed -->
+<div class="box"><h3>TECHNICAL SKILLS</h3>
+<span class="tag" contenteditable="true">Software & Web Development</span><span class="tag" contenteditable="true">Computer Vision & Deep Learning / AI</span><span class="tag" contenteditable="true">DevOps, Cloud & System Administration</span>
+<p class="hand"> ✎</p></div>
+</div>
+<span class="d spin" style="top:70px;right:6%;width:56px;height:56px" data-p=".08"><svg><use href="#flower"/></svg></span>
+<span class="d bounce ink" style="bottom:50px;right:12%;width:32px"><svg><use href="#heart"/></svg></span>
+<span class="d twinkle pink" style="top:45%;left:-10px"><svg><use href="#sparkle"/></svg></span>
+</div></section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="wrap">
+    <div class="rv">
+      <span class="label">03 — gallery</span>
+      <h2 class="big">SELECTED<br><em>WORKS.</em></h2>
+      <span class="hand">for now ✿</span>
+    </div>
+
+    <div class="works">
+      <!-- PROJECT 01 -->
+      <article class="proj rv">
+        <div class="shot">
+          <div class="inner">
+            <img src="images/tani-lokal.png" alt="TaniLokal project screenshot">
+          </div>
+        </div>
+        <div class="info">
+          <span class="no">project 01</span>
+          <h3 contenteditable="true">TaniLokal</h3>
+          <p>Web-based agricultural digital platform connecting local farmers directly with consumers.</p>
+          <p><b>Technology:</b> HTML, CSS, JavaScript, UI/UX Design (Figma)</p>
+          <p><b>My contribution:</b> User needs analysis (Empathy Map & Mind Map), multi-page UI/UX prototyping, and Value Proposition Canvas design</p>
+          <div class="links">
+            <a class="btn" href="https://drive.google.com/file/d/15T_pvEGugzg9ICArLPfKhqdvYLTuxC4I/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View Project</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 02 -->
+      <article class="proj rv">
+        <div class="shot">
+          <div class="inner">
+            <img src="images/sirasa.png" alt="SiRasa project screenshot">
+          </div>
+        </div>
+        <div class="info">
+          <span class="no">project 02</span>
+          <h3 contenteditable="true">SiRasa</h3>
+          <p>Zero-waste cooking mobile app interface helping users transform kitchen scraps into recipes.</p>
+          <p><b>Technology:</b> Mobile UI/UX Design, Figma, Brand Identity Design</p>
+          <p><b>My contribution:</b> Designed splash screen, brand identity, home page UI with main CTAs, recipe card layouts, and tab navigation.</p>
+          <div class="links">
+            <a class="btn" href="https://drive.google.com/file/d/12uXHwHioXsIESZAPZjlp6xZXRlMFdz9y/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View Project</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 03 -->
+      <article class="proj rv">
+        <div class="shot">
+          <div class="inner">
+              <img src="images/cancap.png" alt="Defect Detection System project screenshot">
+            </div>
+          </div>
+        <div class="info">
+          <span class="no">project 03</span>
+          <h3 contenteditable="true">Defect Detection System</h3>
+          <p>Web-based packaging defect detection system integrating computer vision for cans and bottle caps.</p>
+          <p><b>Technology:</b> Python, YOLOv8, YOLOv11, Laravel 12, Computer Vision, HTML, CSS</p>
+          <p><b>My contribution:</b> Comparative model performance evaluation (Precision & mAP50 analysis), live camera integration, multi-class labeling, and audit log features.</p>
+          <div class="links">
+            <a class="btn" href="https://drive.google.com/file/d/1sxRVp4YhFkwPymqO4J07ksC-5_b24GI6/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View Project</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="hand" style="margin-top:50px;text-align:right">more things i've made ↓</p>
+  </div>
+
+  <span class="d drift" style="top:120px;right:3%" data-p=".07"><svg><use href="#star"/></svg></span>
+  <span class="d slide pink" style="top:40%;left:-10px;width:90px"><svg><use href="#scribble"/></svg></span>
+  <span class="d ink" style="bottom:120px;left:6%;width:34px"><svg><use href="#cross"/></svg></span>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience"><div class="wrap">
+<div class="rv"><span class="label">04 — the journey</span>
+<h2 class="big">MY<br><em>JOURNEY.</em></h2><span class="hand">tap a card to unfold it ↓</span></div>
+<div class="journey">
+<div class="ex rv"><button aria-expanded="false"><span class="plus">+</span><span class="yr">JULY 2025 – SEPT 2025</span><h3>FRESHMEN LEADER</h3><span class="sub">First Year Programs, BINUS University</span><div class="more"><ul><li>Guiding and supporting a group of new students during orientation, including ensuring attendance, assignment completion, and participant readiness through attendance records and routine assignment checks.</li><li>Delivering orientation materials and providing guidance on college life, while serving as the primary point of contact for new students during orientation.</li><li>Coordinating with fellow Freshman Leaders and the organizing committee to ensure assignments and responsibilities were completed on time.</li></ul></div></button></div>
+<div class="ex rv"><button aria-expanded="false"><span class="plus">+</span><span class="yr">SEPT 2025 – JAN 2026</span><h3>FRESHMEN PARTNER</h3><span class="sub">First Year Programs, BINUS University</span><div class="more"><ul><li>Providing weekly materials on adjusting to college life, including study tips, time management, and adapting to the campus environment.</li><li>Organizing regular games and team-building activities to maintain motivation and foster a sense of community among freshmen.</li><li>Monitoring student participation, attendance, and assignments, while assisting freshmen in earning the community service points required by the university.</li></ul></div></button></div>
+<div class="ex rv"><button aria-expanded="false"><span class="plus">+</span><span class="yr">FEB 2026 – PRESENT</span><h3>TREASURER</h3><span class="sub">HIMTI BINUS University</span><div class="more"><ul><li>Managing organizational finances, including monthly financial reports, income and expense records, and activity budgets.</li><li>Ensuring transparency and accuracy of financial reports as accountability to the executive board and association members.</li><li>Coordinating with other divisions to prepare the Budget Plan (RAB) for each work program.</li></ul></div></button></div>
+</div>
+<span class="d spin" style="top:90px;right:8%;width:56px;height:56px"><svg><use href="#flower"/></svg></span>
+<span class="d drift pink" style="top:50%;right:20%"><svg><use href="#star"/></svg></span>
+<span class="d twinkle" style="bottom:60px;left:5%;width:30px"><svg><use href="#sparkle"/></svg></span>
+</div></section>
+
+<!-- CONTACT -->
+<section id="contact"><div class="wrap">
+<span class="label">05 — say hi</span>
+<h2 class="big">LET'S<br><em>CONNECT.</em></h2>
+<p style="max-width:420px;margin:22px 0 0">Have an idea, project, or just want to say hello?</p>
+<a class="mail" href="mailto:raden.solihin@binus.ac.id">raden.solihin@binus.ac.id</a>
+<!-- EDIT: replace href="#" with your real profile URLs -->
+<div class="soc">
+  <a href="https://www.instagram.com/zhrayhaa?stkn=M2JhNHN6c2F5d3Zm" target="_blank" rel="noopener noreferrer">Instagram ·</a>
+  <a href="https://www.linkedin.com/in/zahra-auliya-a1a263325/?isSelfProfile=false" target="_blank" rel="noopener noreferrer">LinkedIn ·</a>
+  <a href="https://github.com/zahraayha" target="_blank" rel="noopener noreferrer">GitHub ·</a>
+</div>
+
+<!-- TOMBOL SAY HELLO & DOWNLOAD CV SEJAJAR -->
+<div class="hero-btns" style="display: inline-flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 30px;">
+  <a class="btn say" href="mailto:raden.solihin@binus.ac.id">SAY HELLO →</a>
+  <a class="btn btn-cv" href="https://drive.google.com/file/d/1vU7uJusU9d2NR7IQ2Z5CLquVMtCxz9g-/view?usp=drive_link" target="_blank" rel="noopener noreferrer">DOWNLOAD CV ↓</a>
+</div>
+
+<footer>
+  <span>© 2026 Raden Zahra Auliya Marissa Soihin</span>
+  <span class="hand">long story short, i survived ♡</span>
+</footer>
+
+<span class="d spin pink" style="top:90px;right:8%;width:64px;height:64px"><svg><use href="#flower"/></svg></span>
+<span class="d bounce" style="top:42%;right:24%;color:var(--pink)"><svg><use href="#heart"/></svg></span>
+<span class="d twinkle" style="top:60px;right:30%;color:var(--pink)"><svg><use href="#sparkle"/></svg></span>
+</div></section>
+</main>
+
+<script>
+(function(){
+var $=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+var hdr=document.getElementById('top'),burger=$('.burger')[0],menu=document.getElementById('menu');
+function onScroll(){hdr.classList.toggle('scrolled',scrollY>20)}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+burger.onclick=function(){var o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)};
+$('nav a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');burger.setAttribute('aria-expanded','false')})});
+// reveal
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+$('.rv').forEach(function(el){io.observe(el)});
+// active nav
+var links=$('nav a');
+var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});
+$('main section').forEach(function(s){so.observe(s)});
+// timeline
+$('.ex button').forEach(function(b){b.onclick=function(){var ex=b.parentNode,o=!ex.classList.contains('open');ex.classList.toggle('open',o);b.setAttribute('aria-expanded',o)}});
+// parallax
+var ds=$('.d[data-p]'),tick=false;
+function par(){tick=false;ds.forEach(function(d){var r=d.parentNode.getBoundingClientRect();d.style.translate='0 '+((r.top+r.height/2-innerHeight/2)*-parseFloat(d.dataset.p))+'px'})}
+addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(par)}},{passive:true});par();
+// portrait preview (local only; set the img src in HTML to keep it permanently)
+var img=document.getElementById('portrait'),txt=document.getElementById('phText');
+function show(){if(img.getAttribute('src')){img.hidden=false;txt.hidden=true}}show();
+var f=document.createElement('input');f.type='file';f.accept='image/*';
+document.getElementById('frame').onclick=function(){f.click()};
+f.onchange=function(){var r=new FileReader();r.onload=function(){img.src=r.result;show()};if(f.files[0])r.readAsDataURL(f.files[0])};
+// cursor
+var dot=document.getElementById('dot');
+addEventListener('pointermove',function(e){dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';dot.classList.toggle('big',!!e.target.closest('a,button,.chip,.polaroid'))},{passive:true});
+})();
+</script>
+</body>
+</html>
